@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     DANIPEZ · LANDING
+     Este archivo es la estructura (el "esqueleto") de la página.
+     Los colores, tamaños y espacios están en styles.css.
+     Busca los comentarios que dicen "CAMBIA ESTO" para poner
+     tus propios textos, fotos y enlaces.
+     ============================================================ -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Esta línea hace que la página se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CAMBIA ESTO: título que aparece en la pestaña y en Google -->
+  <title>Danipez · Diseño, arte y trabajos hechos a mano</title>
+  <meta name="description" content="Danipez: diseño corporativo, invitaciones y recuerdos para matrimonios, grabado e ilustración, crochet y reciclaje de plásticos.">
+
+  <!-- Tipografías de Google Fonts: una con carácter para títulos, otra limpia para textos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Aquí se conecta el archivo de estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ================= ENCABEZADO / MENÚ ================= -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Danipez</a>
+
+    <nav class="menu" aria-label="Menú principal">
+      <!-- Los href="#algo" llevan a la sección con ese id dentro de esta misma página -->
+      <a href="#areas">Trabajos</a>
+      <a href="#destacados">Destacados</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= PORTADA (HERO) ================= -->
+    <section class="hero">
+      <p class="hero__eyebrow">Diseño · Arte · Hecho a mano</p>
+
+      <!-- CAMBIA ESTO: la frase principal. Debe decir qué haces en una línea -->
+      <h1>Diseño y trabajos hechos a mano, con identidad propia</h1>
+
+      <p class="hero__text">
+        Creo marcas, invitaciones, grabados, tejidos y objetos reciclados.
+        Elige un área para ver mis trabajos.
+      </p>
+
+      <div class="hero__buttons">
+        <a href="#areas" class="btn btn--dark">Ver trabajos</a>
+        <a href="#contacto" class="btn btn--line">Escríbeme</a>
+      </div>
+    </section>
+
+
+    <!-- ================= LAS 5 ÁREAS ================= -->
+    <section id="areas" class="areas">
+      <h2 class="section-title">¿Qué estás buscando?</h2>
+
+      <div class="areas__grid">
+
+        <!-- Cada tarjeta es un enlace completo a la página de esa área.
+             Las páginas (corporativo.html, etc.) las crearemos después.
+             CAMBIA ESTO: en --img pon la ruta de tu foto, por ejemplo img/corporativo.jpg.
+             Mientras no exista la foto, se ve el color del área. -->
+
+        <!-- 1. CORPORATIVO -->
+        <a href="corporativo.html" class="card card--corporativo">
+          <div class="card__img" style="--img: url('img/corporativo.jpg')"></div>
+          <div class="card__body">
+            <span class="card__num">01</span>
+            <h3>Corporativo</h3>
+            <p>Branding, packaging, formato de informes y todo lo que tu empresa necesite para verse bien.</p>
+            <span class="card__link">Ver proyectos →</span>
+          </div>
+        </a>
+
+        <!-- 2. MATRIMONIOS -->
+        <a href="matrimonios.html" class="card card--matrimonios">
+          <div class="card__img" style="--img: url('img/matrimonios.jpg')"></div>
+          <div class="card__body">
+            <span class="card__num">02</span>
+            <h3>Matrimonios</h3>
+            <p>Invitaciones en papel y online, recuerdos, carteles de mesa e ilustraciones a medida.</p>
+            <span class="card__link">Ver proyectos →</span>
+          </div>
+        </a>
+
+        <!-- 3. ARTE -->
+        <a href="arte.html" class="card card--arte">
+          <div class="card__img" style="--img: url('img/arte.jpg')"></div>
+          <div class="card__body">
+            <span class="card__num">03</span>
+            <h3>Arte</h3>
+            <p>Grabado, ilustración propia e ilustraciones por encargo.</p>
+            <span class="card__link">Ver obra →</span>
+          </div>
+        </a>
+
+        <!-- 4. CROCHET -->
+        <a href="crochet.html" class="card card--crochet">
+          <div class="card__img" style="--img: url('img/crochet.jpg')"></div>
+          <div class="card__body">
+            <span class="card__num">04</span>
+            <h3>Crochet</h3>
+            <p>Piezas tejidas a mano, una a una.</p>
+            <span class="card__link">Ver tejidos →</span>
+          </div>
+        </a>
+
+        <!-- 5. RECICLAJE -->
+        <a href="reciclaje.html" class="card card--reciclaje">
+          <div class="card__img" style="--img: url('img/reciclaje.jpg')"></div>
+          <div class="card__body">
+            <span class="card__num">05</span>
+            <h3>Reciclaje de plásticos</h3>
+            <p>Del plástico desechado a objetos nuevos: el proceso y lo que sale de él.</p>
+            <span class="card__link">Ver proceso →</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- ================= TRABAJOS DESTACADOS ================= -->
+    <section id="destacados" class="featured">
+      <h2 class="section-title">Trabajos destacados</h2>
+
+      <div class="featured__grid">
+        <!-- CAMBIA ESTO: una tarjeta por trabajo. Cada una lleva a la página del proyecto.
+             Para agregar otro, copia un bloque <a> completo y pégalo debajo. -->
+
+        <a href="#" class="work">
+          <div class="work__img" style="--img: url('img/destacado-1.jpg')"></div>
+          <span class="work__tag">Corporativo</span>
+          <h3>Nombre del proyecto</h3>
+        </a>
+
+        <a href="#" class="work">
+          <div class="work__img" style="--img: url('img/destacado-2.jpg')"></div>
+          <span class="work__tag">Matrimonios</span>
+          <h3>Nombre del proyecto</h3>
+        </a>
+
+        <a href="#" class="work">
+          <div class="work__img" style="--img: url('img/destacado-3.jpg')"></div>
+          <span class="work__tag">Arte</span>
+          <h3>Nombre del proyecto</h3>
+        </a>
+
+        <a href="#" class="work">
+          <div class="work__img" style="--img: url('img/destacado-4.jpg')"></div>
+          <span class="work__tag">Crochet</span>
+          <h3>Nombre del proyecto</h3>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ================= SOBRE MÍ ================= -->
+    <section id="sobre-mi" class="about">
+      <div class="about__photo" style="--img: url('img/yo.jpg')"></div>
+
+      <div class="about__text">
+        <h2 class="section-title">Sobre mí</h2>
+        <!-- CAMBIA ESTO: cuenta quién eres, qué te mueve y cómo trabajas.
+             Dos o tres párrafos cortos bastan. -->
+        <p>Soy Dani, y detrás de Danipez hay una forma de trabajar: partir de una idea y llevarla a algo concreto, hecho con cuidado.</p>
+        <p>Diseño para empresas y matrimonios, grabo, ilustro, tejo y transformo plástico reciclado en objetos nuevos. Cada área es distinta, pero todas comparten lo mismo: el trabajo manual y el detalle.</p>
+        <!-- Cuando tengas la página "Sobre mí" completa, puedes enlazarla aquí -->
+      </div>
+    </section>
+
+
+    <!-- ================= CONTACTO ================= -->
+    <section id="contacto" class="contact">
+      <h2 class="section-title">Cuéntame tu proyecto</h2>
+      <p class="contact__text">Escríbeme y vemos cómo hacerlo realidad.</p>
+
+      <div class="contact__buttons">
+        <!-- CAMBIA ESTO: pon tu número (con código de país, sin + ni espacios), tu usuario y tu correo -->
+        <a href="https://wa.me/56900000000" class="btn btn--dark">WhatsApp</a>
+        <a href="https://instagram.com/tu_usuario" class="btn btn--line">Instagram</a>
+        <a href="mailto:hola@tucorreo.cl" class="btn btn--line">Correo</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= PIE DE PÁGINA ================= -->
+  <footer class="site-footer">
+    <p>© 2026 Danipez · Hecho a mano</p>
+  </footer>
+
+</body>
+</html>
