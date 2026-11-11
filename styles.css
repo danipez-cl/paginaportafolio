@@ -24,7 +24,7 @@
   --c-fotografia:  #5b5566;  /* gris violáceo: sobrio, deja protagonismo a la foto */
 
   /* Tipografías */
-  --fuente-titulos: "Fraunces", Georgia, serif;
+  --fuente-titulos: "Poppins", system-ui, sans-serif;   /* sans moderna para títulos */
   --fuente-texto: "Inter", system-ui, sans-serif;
 
   /* Ancho máximo del contenido */
@@ -51,6 +51,7 @@ h1, h2, h3 {
   font-family: var(--fuente-titulos);
   font-weight: 600;
   line-height: 1.15;
+  letter-spacing: -0.02em;   /* junta un poco las letras: se ve más moderno en tamaños grandes */
   margin: 0;
 }
 

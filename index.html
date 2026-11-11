@@ -16,13 +16,15 @@
   <title>Danipez · Diseño, arte y trabajos hechos a mano</title>
   <meta name="description" content="Danipez: diseño corporativo, invitaciones y recuerdos para matrimonios, grabado e ilustración, crochet, reciclaje de plásticos y fotografía.">
 
-  <!-- Tipografías de Google Fonts: una con carácter para títulos, otra limpia para textos -->
+  <!-- Tipografías de Google Fonts: Poppins (sans moderna) para títulos e Inter para textos.
+       Si cambias una tipografía, hay que cambiarla aquí Y en styles.css (sección VARIABLES). -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Aquí se conecta el archivo de estilos -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- El "?v=3" obliga al navegador a bajar el CSS nuevo. Si algún día un cambio no se ve, súbele el número. -->
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 
 <body>
@@ -33,8 +35,9 @@
 
     <nav class="menu" aria-label="Menú principal">
       <!-- Los href="#algo" llevan a la sección con ese id dentro de esta misma página -->
-      <a href="#areas">WORK</a>
-      <a href="#sobre-mi">ABOUT ME</a>
+      <a href="#areas">Trabajos</a>
+      <a href="#destacados">Destacados</a>
+      <a href="#sobre-mi">Sobre mí</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
@@ -61,12 +64,12 @@
         <span class="marquee marquee--1">
           <span class="marquee__track">
             <span class="marquee__group">
-              <span>diseño</span><span>diseño</span><span>diseño</span><span>diseño</span>
-              <span>diseño</span><span>diseño</span><span>diseño</span><span>diseño</span>
+              <span>Diseño</span><span>Diseño</span><span>Diseño</span><span>Diseño</span>
+              <span>Diseño</span><span>Diseño</span><span>Diseño</span><span>Diseño</span>
             </span>
             <span class="marquee__group" aria-hidden="true">
-              <span>diseño</span><span>diseño</span><span>diseño</span><span>diseño</span>
-              <span>diseño</span><span>diseño</span><span>diseño</span><span>diseño</span>
+              <span>Diseño</span><span>Diseño</span><span>Diseño</span><span>Diseño</span>
+              <span>Diseño</span><span>Diseño</span><span>Diseño</span><span>Diseño</span>
             </span>
           </span>
         </span>
@@ -75,14 +78,14 @@
         <span class="marquee marquee--2">
           <span class="marquee__track">
             <span class="marquee__group">
-              <span>art</span><span>art</span><span>art</span><span>art</span>
-              <span>art</span><span>art</span><span>art</span><span>art</span>
-              <span>art</span><span>art</span>
+              <span>Arte</span><span>Arte</span><span>Arte</span><span>Arte</span>
+              <span>Arte</span><span>Arte</span><span>Arte</span><span>Arte</span>
+              <span>Arte</span><span>Arte</span>
             </span>
             <span class="marquee__group" aria-hidden="true">
-              <span>art</span><span>art</span><span>art</span><span>art</span>
-              <span>art</span><span>art</span><span>art</span><span>art</span>
-              <span>art</span><span>art</span>
+              <span>Arte</span><span>Arte</span><span>Arte</span><span>Arte</span>
+              <span>Arte</span><span>Arte</span><span>Arte</span><span>Arte</span>
+              <span>Arte</span><span>Arte</span>
             </span>
           </span>
         </span>
@@ -91,12 +94,12 @@
         <span class="marquee marquee--3">
           <span class="marquee__track">
             <span class="marquee__group">
-              <span>fotografía</span><span>fotografía</span><span>fotografía</span>
-              <span>fotografía</span><span>fotografía</span><span>fotografía</span>
+              <span>Fotografía</span><span>Fotografía</span><span>Fotografía</span>
+              <span>Fotografía</span><span>Fotografía</span><span>Fotografía</span>
             </span>
             <span class="marquee__group" aria-hidden="true">
-              <span>fotografía</span><span>fotografía</span><span>fotografía</span>
-              <span>fotografía</span><span>fotografía</span><span>fotografía</span>
+              <span>Fotografía</span><span>Fotografía</span><span>Fotografía</span>
+              <span>Fotografía</span><span>Fotografía</span><span>Fotografía</span>
             </span>
           </span>
         </span>
@@ -106,7 +109,8 @@
       <!-- Este bloque mantiene el texto y los botones centrados y con ancho cómodo -->
       <div class="hero__content">
         <p class="hero__text">
-          Exploración creativa - PORTAFOLIO
+          Creo marcas, invitaciones, grabados, tejidos, objetos reciclados y fotografías.
+          Elige un área para ver mis trabajos.
         </p>
 
         <div class="hero__buttons">
