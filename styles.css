@@ -178,24 +178,30 @@ html {
 .areas__grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 1fr;        /* todas las filas tienen la misma altura */
   gap: 24px;
 }
 
 .card {
-  grid-column: span 2;
+  grid-column: span 2;        /* cada tarjeta ocupa 2 de las 6 columnas */
   display: flex;
   flex-direction: column;
   background: #fff;
   border: 1px solid var(--linea);
-  border-radius: 16px;
-  overflow: hidden;           /* recorta la foto en las esquinas redondeadas */
+  border-radius: 0;           /* esquinas rectas */
+  overflow: hidden;
   transition: transform 0.25s, box-shadow 0.25s;
 }
 
-/* Las dos últimas tarjetas (4 y 5) son más anchas */
-.card:nth-child(4),
+/* Las tarjetas 4 y 5 tienen el mismo tamaño que las demás,
+   pero se centran en la segunda fila:
+   la 4 empieza en la columna 2 y la 5 en la columna 4 */
+.card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
 .card:nth-child(5) {
-  grid-column: span 3;
+  grid-column: 4 / span 2;
 }
 
 .card:hover {
@@ -353,15 +359,19 @@ html {
 
 /* Tablet: las tarjetas pasan a 2 por fila */
 @media (max-width: 900px) {
-  .card,
-  .card:nth-child(4),
-  .card:nth-child(5) {
-    grid-column: span 3;
+  /* En tablet la cuadrícula pasa a 4 columnas: 2 tarjetas por fila */
+  .areas__grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  /* La última queda sola: que ocupe todo el ancho */
+  .card,
+  .card:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  /* La última queda sola en su fila: mismo tamaño, centrada */
   .card:nth-child(5) {
-    grid-column: span 6;
+    grid-column: 2 / span 2;
   }
 
   .about {
@@ -379,6 +389,11 @@ html {
   .card:nth-child(4),
   .card:nth-child(5) {
     grid-column: span 6;
+  }
+
+  /* En celular las filas se ajustan al contenido de cada tarjeta */
+  .areas__grid {
+    grid-auto-rows: auto;
   }
 
   .site-header {
