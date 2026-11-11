@@ -46,22 +46,80 @@
     <section class="hero">
       <p class="hero__eyebrow">Diseño · Arte · Hecho a mano</p>
 
-      <!-- CAMBIA ESTO: la frase principal. Debe decir qué haces en una línea -->
-      <h1>Diseño y trabajos hechos a mano, con identidad propia</h1>
+      <!-- LÍNEAS EN MOVIMIENTO
+           Son tres líneas (Diseño, Arte, Fotografía) que se desplazan de derecha a izquierda.
+           Cómo funciona el truco para que nunca se corten:
+             - Cada línea tiene un "track" (una cinta larga) con DOS grupos idénticos.
+             - La cinta se mueve hasta la mitad de su largo (justo un grupo) y vuelve a empezar.
+               Como el segundo grupo es igual al primero, el salto no se nota.
+           El segundo grupo lleva aria-hidden="true" para que los lectores de pantalla
+           no repitan las palabras muchas veces.
+           CAMBIA ESTO: para cambiar una palabra, reemplázala en todas sus repeticiones.
+           La velocidad de cada línea se cambia en styles.css (busca "MOVIMIENTO"). -->
+      <h1 class="marquees" aria-label="Diseño, Arte y Fotografía">
 
-      <p class="hero__text">
-        Creo marcas, invitaciones, grabados, tejidos, objetos reciclados y fotografías.
-        Elige un área para ver mis trabajos.
-      </p>
+        <!-- Línea 1: Diseño -->
+        <span class="marquee marquee--1">
+          <span class="marquee__track">
+            <span class="marquee__group">
+              <span>Diseño</span><span>Diseño</span><span>Diseño</span><span>Diseño</span>
+              <span>Diseño</span><span>Diseño</span><span>Diseño</span><span>Diseño</span>
+            </span>
+            <span class="marquee__group" aria-hidden="true">
+              <span>Diseño</span><span>Diseño</span><span>Diseño</span><span>Diseño</span>
+              <span>Diseño</span><span>Diseño</span><span>Diseño</span><span>Diseño</span>
+            </span>
+          </span>
+        </span>
 
-      <div class="hero__buttons">
-        <a href="#areas" class="btn btn--dark">Ver trabajos</a>
-        <a href="#contacto" class="btn btn--line">Escríbeme</a>
+        <!-- Línea 2: Arte -->
+        <span class="marquee marquee--2">
+          <span class="marquee__track">
+            <span class="marquee__group">
+              <span>Arte</span><span>Arte</span><span>Arte</span><span>Arte</span>
+              <span>Arte</span><span>Arte</span><span>Arte</span><span>Arte</span>
+              <span>Arte</span><span>Arte</span>
+            </span>
+            <span class="marquee__group" aria-hidden="true">
+              <span>Arte</span><span>Arte</span><span>Arte</span><span>Arte</span>
+              <span>Arte</span><span>Arte</span><span>Arte</span><span>Arte</span>
+              <span>Arte</span><span>Arte</span>
+            </span>
+          </span>
+        </span>
+
+        <!-- Línea 3: Fotografía -->
+        <span class="marquee marquee--3">
+          <span class="marquee__track">
+            <span class="marquee__group">
+              <span>Fotografía</span><span>Fotografía</span><span>Fotografía</span>
+              <span>Fotografía</span><span>Fotografía</span><span>Fotografía</span>
+            </span>
+            <span class="marquee__group" aria-hidden="true">
+              <span>Fotografía</span><span>Fotografía</span><span>Fotografía</span>
+              <span>Fotografía</span><span>Fotografía</span><span>Fotografía</span>
+            </span>
+          </span>
+        </span>
+
+      </h1>
+
+      <!-- Este bloque mantiene el texto y los botones centrados y con ancho cómodo -->
+      <div class="hero__content">
+        <p class="hero__text">
+          Creo marcas, invitaciones, grabados, tejidos, objetos reciclados y fotografías.
+          Elige un área para ver mis trabajos.
+        </p>
+
+        <div class="hero__buttons">
+          <a href="#areas" class="btn btn--dark">Ver trabajos</a>
+          <a href="#contacto" class="btn btn--line">Escríbeme</a>
+        </div>
       </div>
     </section>
 
 
-    <!-- ================= LAS 5 ÁREAS ================= -->
+    <!-- ================= LAS 6 ÁREAS ================= -->
     <section id="areas" class="areas">
       <h2 class="section-title">¿Qué estás buscando?</h2>
 
