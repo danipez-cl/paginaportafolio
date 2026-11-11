@@ -21,6 +21,7 @@
   --c-arte:        #b9703f;  /* terracota: tinta y papel */
   --c-crochet:     #7d9a7a;  /* verde salvia: lana */
   --c-reciclaje:   #3f8f8b;  /* verde azulado: material reciclado */
+  --c-fotografia:  #5b5566;  /* gris violáceo: sobrio, deja protagonismo a la foto */
 
   /* Tipografías */
   --fuente-titulos: "Fraunces", Georgia, serif;
@@ -193,17 +194,6 @@ html {
   transition: transform 0.25s, box-shadow 0.25s;
 }
 
-/* Las tarjetas 4 y 5 tienen el mismo tamaño que las demás,
-   pero se centran en la segunda fila:
-   la 4 empieza en la columna 2 y la 5 en la columna 4 */
-.card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.card:nth-child(5) {
-  grid-column: 4 / span 2;
-}
-
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(43, 38, 34, 0.12);
@@ -257,6 +247,7 @@ html {
 .card--arte        { --color: var(--c-arte); }
 .card--crochet     { --color: var(--c-crochet); }
 .card--reciclaje   { --color: var(--c-reciclaje); }
+.card--fotografia  { --color: var(--c-fotografia); }
 
 
 /* ---------- 7. TRABAJOS DESTACADOS ---------- */
@@ -364,14 +355,8 @@ html {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .card,
-  .card:nth-child(4) {
+  .card {
     grid-column: span 2;
-  }
-
-  /* La última queda sola en su fila: mismo tamaño, centrada */
-  .card:nth-child(5) {
-    grid-column: 2 / span 2;
   }
 
   .about {
@@ -385,9 +370,7 @@ html {
 
 /* Celular: una tarjeta por fila */
 @media (max-width: 600px) {
-  .card,
-  .card:nth-child(4),
-  .card:nth-child(5) {
+  .card {
     grid-column: span 6;
   }
 
