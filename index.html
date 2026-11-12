@@ -60,7 +60,7 @@
            Son tres líneas (Diseño, Arte, Fotografía). Cada palabra aparece UNA sola vez:
              1. Entra desde el lado derecho de la pantalla.
              2. Llega al borde izquierdo, hace un pequeño rebote y se detiene.
-             3. Cuando las tres ya llegaron, descansan 2 segundos juntas.
+             3. Cuando las tres ya llegaron, descansan 1,5 segundos juntas.
              4. Calmadamente retoman el movimiento, salen por la izquierda y
                 vuelven a aparecer por la derecha. Y así sin parar.
            Cada línea llega a un ritmo distinto (Arte es la más rápida, Fotografía la más lenta).
@@ -191,12 +191,14 @@
 
       <!-- BOTONES DE CONTACTO
            Hay dos formas de mostrarlos, y se cambian con UNA sola clase en la línea de abajo:
-             · Con el nombre escrito (WhatsApp, Instagram, Correo) → así está ahora.
-             · Solo con íconos → agrega la clase "contact__buttons--icons", así:
-                 <div class="contact__buttons contact__buttons--icons">
+             · Solo con íconos (WhatsApp, Instagram, Correo) → así está ahora, por la clase
+               "contact__buttons--icons".
+             · Con el nombre escrito → borra " contact__buttons--icons" de la línea de abajo, así:
+                 <div class="contact__buttons">
            Cada botón tiene su ícono y su texto; el CSS decide cuál de los dos se ve.
-           El data-label repite el texto: sirve para que el botón no "salte" de ancho al ponerse en negrita. -->
-      <div class="contact__buttons">
+           El data-label repite el texto: sirve para que el botón no "salte" de ancho al ponerse en negrita
+           (solo se nota en el modo con nombre escrito). -->
+      <div class="contact__buttons contact__buttons--icons">
         <!-- CAMBIA ESTO: pon tu número (con código de país, sin + ni espacios), tu usuario y tu correo -->
 
         <a href="https://wa.me/56987798245" class="contact__btn" aria-label="WhatsApp">
