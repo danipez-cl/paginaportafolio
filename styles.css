@@ -231,45 +231,44 @@ html {
   -webkit-text-stroke: 1.5px var(--texto);
 }
 
-/* ARTE (rápida): llega a los 4 s, rebota hasta los 6 s, descansa, sale entre los 12 s y los 16 s */
+/* ARTE (rápida): llega a los 4 s, rebota hasta los 5 s, descansa, sale entre los 12 s y los 16 s */
 @keyframes mov-arte {
-  0%   { transform: translateX(var(--inicio));    animation-timing-function: cubic-bezier(.3, .6, .6, 1); }
-  20%  { transform: translateX(0);                animation-timing-function: ease-out; }   /* toca el borde */
-  23%  { transform: translateX(var(--rebote));    animation-timing-function: ease-in; }    /* rebota */
-  26%  { transform: translateX(0);                animation-timing-function: ease-out; }
-  28%  { transform: translateX(var(--rebote-2));  animation-timing-function: ease-in; }    /* rebote chico */
-  30%  { transform: translateX(0); }                                                       /* queda quieta... */
-  60%  { transform: translateX(0);                animation-timing-function: ease-in; }    /* ...hasta aquí: arranca suave */
-  80%  { transform: translateX(var(--salida)); }                                           /* sale por la izquierda */
+  0%    { transform: translateX(var(--inicio));    animation-timing-function: cubic-bezier(.3, .6, .6, 1); }
+  20%   { transform: translateX(0);                animation-timing-function: ease-out; }   /* toca el borde */
+  21.5% { transform: translateX(var(--rebote));    animation-timing-function: ease-in; }    /* rebota */
+  23%   { transform: translateX(0);                animation-timing-function: ease-out; }
+  24%   { transform: translateX(var(--rebote-2));  animation-timing-function: ease-in; }    /* rebote chico */
+  25%   { transform: translateX(0); }                                                       /* queda quieta... */
+  60%   { transform: translateX(0);                animation-timing-function: ease-in; }    /* ...hasta aquí: arranca suave */
+  80%   { transform: translateX(var(--salida)); }                                          /* sale por la izquierda */
   80.01%, 100% { transform: translateX(var(--inicio)); }                                   /* espera afuera, a la derecha */
 }
 
-/* DISEÑO (media): llega a los 6,5 s, rebota hasta los 8,5 s, descansa, sale entre los 12 s y los 17,5 s */
+/* DISEÑO (media): llega a los 6,5 s, rebota hasta los 7,5 s, descansa, sale entre los 12 s y los 17,5 s */
 @keyframes mov-diseno {
   0%    { transform: translateX(var(--inicio));   animation-timing-function: cubic-bezier(.3, .6, .6, 1); }
   32.5% { transform: translateX(0);               animation-timing-function: ease-out; }
-  35.5% { transform: translateX(var(--rebote));   animation-timing-function: ease-in; }
-  38.5% { transform: translateX(0);               animation-timing-function: ease-out; }
-  40.5% { transform: translateX(var(--rebote-2)); animation-timing-function: ease-in; }
-  42.5% { transform: translateX(0); }
+  34%   { transform: translateX(var(--rebote));   animation-timing-function: ease-in; }
+  35.5% { transform: translateX(0);               animation-timing-function: ease-out; }
+  36.5% { transform: translateX(var(--rebote-2)); animation-timing-function: ease-in; }
+  37.5% { transform: translateX(0); }
   60%   { transform: translateX(0);               animation-timing-function: ease-in; }
   87.5% { transform: translateX(var(--salida)); }
   87.51%, 100% { transform: translateX(var(--inicio)); }
 }
 
-/* FOTOGRAFÍA (lenta): llega a los 8,5 s, rebota hasta los 10 s, descansa, sale entre los 12 s y los 19 s */
+/* FOTOGRAFÍA (lenta): llega a los 9 s, rebota hasta los 10 s, descansa, sale entre los 12 s y los 19 s */
 @keyframes mov-fotografia {
   0%    { transform: translateX(var(--inicio));   animation-timing-function: cubic-bezier(.3, .6, .6, 1); }
-  42.5% { transform: translateX(0);               animation-timing-function: ease-out; }
-  45.5% { transform: translateX(var(--rebote));   animation-timing-function: ease-in; }
-  47.5% { transform: translateX(0);               animation-timing-function: ease-out; }
+  45%   { transform: translateX(0);               animation-timing-function: ease-out; }
+  46.5% { transform: translateX(var(--rebote));   animation-timing-function: ease-in; }
+  48%   { transform: translateX(0);               animation-timing-function: ease-out; }
   49%   { transform: translateX(var(--rebote-2)); animation-timing-function: ease-in; }
   50%   { transform: translateX(0); }
   60%   { transform: translateX(0);               animation-timing-function: ease-in; }
   95%   { transform: translateX(var(--salida)); }
   95.01%, 100% { transform: translateX(var(--inicio)); }
 }
-
 /* Si la persona tiene activada la opción "reducir movimiento" en su dispositivo,
    las palabras se quedan quietas en su lugar. Es una buena práctica de accesibilidad. */
 @media (prefers-reduced-motion: reduce) {
