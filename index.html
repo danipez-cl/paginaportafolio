@@ -17,27 +17,37 @@
   <meta name="description" content="Danipez: diseño corporativo, invitaciones y recuerdos para matrimonios, grabado e ilustración, crochet, reciclaje de plásticos y fotografía.">
 
   <!-- Tipografías de Google Fonts: Poppins (sans moderna) para títulos e Inter para textos.
-       Si cambias una tipografía, hay que cambiarla aquí Y en styles.css (sección VARIABLES). -->
+       Si cambias una tipografía, hay que cambiarla aquí Y en styles.css (sección VARIABLES).
+       Inter incluye el peso 700 (negrita), que se usa al pasar el mouse por los botones de contacto. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Aquí se conecta el archivo de estilos -->
-  <!-- El "?v=3" obliga al navegador a bajar el CSS nuevo. Si algún día un cambio no se ve, súbele el número. -->
-  <link rel="stylesheet" href="styles.css?v=3">
+  <!-- El "?v=4" obliga al navegador a bajar el CSS nuevo. Si algún día un cambio no se ve, súbele el número. -->
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 
 <body>
 
   <!-- ================= ENCABEZADO / MENÚ ================= -->
   <header class="site-header">
-    <a href="index.html" class="logo">Danipez</a>
+    <!-- aqui va a ir el logo
+         Cómo ponerlo:
+           1. Guarda tu logo en la carpeta img/ (por ejemplo img/logo.svg o img/logo.png).
+           2. Si tu archivo se llama distinto o es .png, cambia solo el src="..." de abajo.
+           3. Para hacerlo más grande o más chico, cambia "height" en .logo__img (styles.css).
+         Mientras el archivo no exista, el navegador muestra el texto "Danipez" (el alt). -->
+    <a href="index.html" class="logo" aria-label="Danipez, ir al inicio">
+      <img src="img/logo.svg" alt="Danipez" class="logo__img">
+    </a>
 
     <nav class="menu" aria-label="Menú principal">
       <!-- Los href="#algo" llevan a la sección con ese id dentro de esta misma página -->
-      <a href="#areas">PROYECTOS</a>
-      <a href="#sobre-mi">SOBRE MÍ</a>
-      <a href="#contacto">CONTACTO</a>
+      <a href="#areas">Trabajos</a>
+      <a href="#destacados">Destacados</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
@@ -45,159 +55,153 @@
 
     <!-- ================= PORTADA (HERO) ================= -->
     <section class="hero">
-         <!-- este es como un título antes de las 3 palabras que se mueven -->
-      <p class="hero__eyebrow"></p>
+      <p class="hero__eyebrow">Diseño · Arte · Hecho a mano</p>
 
       <!-- LÍNEAS EN MOVIMIENTO
-           Son tres líneas (Diseño, Arte, Fotografía) que se desplazan de derecha a izquierda.
-           Cómo funciona el truco para que nunca se corten:
-             - Cada línea tiene un "track" (una cinta larga) con DOS grupos idénticos.
-             - La cinta se mueve hasta la mitad de su largo (justo un grupo) y vuelve a empezar.
-               Como el segundo grupo es igual al primero, el salto no se nota.
-           El segundo grupo lleva aria-hidden="true" para que los lectores de pantalla
-           no repitan las palabras muchas veces.
-           CAMBIA ESTO: para cambiar una palabra, reemplázala en todas sus repeticiones.
-           La velocidad de cada línea se cambia en styles.css (busca "MOVIMIENTO"). -->
+           Son tres líneas (Diseño, Arte, Fotografía). Cada palabra aparece UNA sola vez:
+             1. Entra desde el lado derecho de la pantalla.
+             2. Llega al borde izquierdo, hace un pequeño rebote y se detiene.
+             3. Cuando las tres ya llegaron, descansan 2 segundos juntas.
+             4. Calmadamente retoman el movimiento, salen por la izquierda y
+                vuelven a aparecer por la derecha. Y así sin parar.
+           Cada línea llega a un ritmo distinto (Arte es la más rápida, Fotografía la más lenta).
+           Todo el movimiento está en styles.css (busca "MOVIMIENTO"); aquí solo van las palabras.
+           CAMBIA ESTO: para cambiar una palabra, edítala aquí (y en el aria-label del h1). -->
       <h1 class="marquees" aria-label="Diseño, Arte y Fotografía">
-
-        <!-- Línea 1: Diseño -->
-        <span class="marquee marquee--1">
-          <span class="marquee__track">
-            <span class="marquee__group">
-              <span>diseño</span><span>diseño</span><span>diseño</span><span>diseño</span>
-              <span>diseño</span><span>diseño</span><span>diseño</span><span>diseño</span>
-            </span>
-            <span class="marquee__group" aria-hidden="true">
-              <span>diseño</span><span>diseño</span><span>diseño</span><span>diseño</span>
-              <span>diseño</span><span>diseño</span><span>diseño</span><span>diseño</span>
-            </span>
-          </span>
-        </span>
-
-        <!-- Línea 2: Arte -->
-        <span class="marquee marquee--2">
-          <span class="marquee__track">
-            <span class="marquee__group">
-              <span>arte</span><span>arte</span><span>arte</span><span>arte</span>
-              <span>arte</span><span>arte</span><span>arte</span><span>arte</span>
-              <span>arte</span><span>arte</span>
-            </span>
-            <span class="marquee__group" aria-hidden="true">
-              <span>arte</span><span>arte</span><span>arte</span><span>arte</span>
-              <span>arte</span><span>arte</span><span>arte</span><span>arte</span>
-              <span>arte</span><span>arte</span>
-            </span>
-          </span>
-        </span>
-
-        <!-- Línea 3: Fotografía -->
-        <span class="marquee marquee--3">
-          <span class="marquee__track">
-            <span class="marquee__group">
-              <span>fotografía</span><span>fotografía</span><span>fotografía</span>
-              <span>fotografía</span><span>fotografía</span><span>fotografía</span>
-            </span>
-            <span class="marquee__group" aria-hidden="true">
-              <span>fotografía</span><span>fotografía</span><span>fotografía</span>
-              <span>fotografía</span><span>fotografía</span><span>fotografía</span>
-            </span>
-          </span>
-        </span>
-
+        <span class="marquee marquee--1"><span class="marquee__word">Diseño</span></span>
+        <span class="marquee marquee--2"><span class="marquee__word">Arte</span></span>
+        <span class="marquee marquee--3"><span class="marquee__word">Fotografía</span></span>
       </h1>
 
-      <!-- Este bloque mantiene el texto y los botones centrados y con ancho cómodo -->
+      <!-- Este bloque alinea el texto y los botones con el borde izquierdo de las palabras -->
       <div class="hero__content">
         <p class="hero__text">
-          PORTAFOLIO
+          Creo marcas, invitaciones, grabados, tejidos, objetos reciclados y fotografías.
+          Elige un área para ver mis trabajos.
         </p>
-     <!--
+
         <div class="hero__buttons">
           <a href="#areas" class="btn btn--dark">Ver trabajos</a>
           <a href="#contacto" class="btn btn--line">Escríbeme</a>
         </div>
       </div>
     </section>
-     -->
+
 
     <!-- ================= LAS 6 ÁREAS ================= -->
     <section id="areas" class="areas">
-      <h2 class="section-title">ÁREAS</h2>
+      <h2 class="section-title">¿Qué estás buscando?</h2>
 
       <div class="areas__grid">
 
         <!-- Cada tarjeta es un enlace completo a la página de esa área.
              Las páginas (corporativo.html, etc.) las crearemos después.
-             CAMBIA ESTO: en --img pon la ruta de tu foto, por ejemplo img/corporativo.jpg.
-             Mientras no exista la foto, se ve el color del área. -->
+
+             CADA TARJETA CUADRADA TIENE 3 CAPAS, una sobre otra:
+               1. card__img  → la foto fija (ocupa toda la tarjeta).
+               2. card__gif  → tu GIF animado: solo aparece cuando pasas el mouse por encima.
+               3. card__text → el título y el "Ver ..." centrados sobre la imagen.
+
+             CAMBIA ESTO: en cada tarjeta solo cambia el nombre de los dos archivos:
+               --img: url('img/corporativo.jpg')   ← tu foto fija
+               --gif: url('img/corporativo.gif')   ← tu GIF
+             Ambos van dentro de la carpeta img/. Mientras no existan, se ve el color del área. -->
 
         <!-- 1. CORPORATIVO -->
         <a href="corporativo.html" class="card card--corporativo">
           <div class="card__img" style="--img: url('img/corporativo.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">01</span>
-            <h3>CORPORATIVO</h3>
-            <p>Branding, packaging, identidad de marca.</p>
-            <span class="card__link">VER</span>
+          <div class="card__gif" style="--gif: url('img/corporativo.gif')"></div>
+          <div class="card__text">
+            <h3>Corporativo</h3>
+            <span class="card__link">Ver proyectos →</span>
           </div>
         </a>
 
         <!-- 2. MATRIMONIOS -->
         <a href="matrimonios.html" class="card card--matrimonios">
           <div class="card__img" style="--img: url('img/matrimonios.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">02</span>
-            <h3>MATRIMONIOS</h3>
-            <p>Invitaciones en papel y online, recuerdos, carteles de mesa e ilustraciones a medida.</p>
-            <span class="card__link">VER</span>
+          <div class="card__gif" style="--gif: url('img/matrimonios.gif')"></div>
+          <div class="card__text">
+            <h3>Matrimonios</h3>
+            <span class="card__link">Ver proyectos →</span>
           </div>
         </a>
 
         <!-- 3. ARTE -->
         <a href="arte.html" class="card card--arte">
           <div class="card__img" style="--img: url('img/arte.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">03</span>
-            <h3>ARTE</h3>
-            <p>Grabado, ilustración propia e ilustraciones por encargo.</p>
-            <span class="card__link">VER</span>
+          <div class="card__gif" style="--gif: url('img/arte.gif')"></div>
+          <div class="card__text">
+            <h3>Arte</h3>
+            <span class="card__link">Ver obra →</span>
           </div>
         </a>
 
         <!-- 4. CROCHET -->
         <a href="crochet.html" class="card card--crochet">
           <div class="card__img" style="--img: url('img/crochet.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">04</span>
-            <h3>CROCHET</h3>
-            <p>Piezas tejidas a mano, una a una.</p>
-            <span class="card__link">VER</span>
+          <div class="card__gif" style="--gif: url('img/crochet.gif')"></div>
+          <div class="card__text">
+            <h3>Crochet</h3>
+            <span class="card__link">Ver tejidos →</span>
           </div>
         </a>
 
         <!-- 5. RECICLAJE -->
         <a href="reciclaje.html" class="card card--reciclaje">
           <div class="card__img" style="--img: url('img/reciclaje.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">05</span>
-            <h3>UPCYCLING</h3>
-            <p>Del plástico desechado a objetos nuevos: el proceso y lo que sale de él.</p>
-            <span class="card__link">VER</span>
+          <div class="card__gif" style="--gif: url('img/reciclaje.gif')"></div>
+          <div class="card__text">
+            <h3>Reciclaje de plásticos</h3>
+            <span class="card__link">Ver proceso →</span>
           </div>
         </a>
 
         <!-- 6. FOTOGRAFÍA -->
         <a href="fotografia.html" class="card card--fotografia">
           <div class="card__img" style="--img: url('img/fotografia.jpg')"></div>
-          <div class="card__body">
-            <span class="card__num">06</span>
-            <h3>FOTOGRAFÍA</h3>
-            <!-- CAMBIA ESTO: describe qué tipo de fotografía haces -->
-            <p>Mi mirada a través de la cámara.</p>
-            <span class="card__link">VER</span>
+          <div class="card__gif" style="--gif: url('img/fotografia.gif')"></div>
+          <div class="card__text">
+            <h3>Fotografía</h3>
+            <span class="card__link">Ver fotografías →</span>
           </div>
         </a>
 
+      </div>
+    </section>
+
+
+    <!-- ================= TRABAJOS DESTACADOS ================= -->
+    <section id="destacados" class="featured">
+      <h2 class="section-title">Trabajos destacados</h2>
+
+      <div class="featured__grid">
+        <!-- CAMBIA ESTO: una tarjeta por trabajo. Cada una lleva a la página del proyecto.
+             Para agregar otro, copia un bloque <a> completo y pégalo debajo. -->
+
+        <a href="#" class="work">
+          <div class="work__img" style="--img: url('img/destacado-1.jpg')"></div>
+          <span class="work__tag">Corporativo</span>
+          <h3>Nombre del proyecto</h3>
+        </a>
+
+        <a href="#" class="work">
+          <div class="work__img" style="--img: url('img/destacado-2.jpg')"></div>
+          <span class="work__tag">Matrimonios</span>
+          <h3>Nombre del proyecto</h3>
+        </a>
+
+        <a href="#" class="work">
+          <div class="work__img" style="--img: url('img/destacado-3.jpg')"></div>
+          <span class="work__tag">Arte</span>
+          <h3>Nombre del proyecto</h3>
+        </a>
+
+        <a href="#" class="work">
+          <div class="work__img" style="--img: url('img/destacado-4.jpg')"></div>
+          <span class="work__tag">Crochet</span>
+          <h3>Nombre del proyecto</h3>
+        </a>
       </div>
     </section>
 
@@ -219,14 +223,40 @@
 
     <!-- ================= CONTACTO ================= -->
     <section id="contacto" class="contact">
-      <h2 class="section-title">CONVERSEMOS!</h2>
-      <p class="contact__text">Escríbeme y vemos cómo hacer realidad tu proyecto.</p>
+      <h2 class="section-title">Cuéntame tu proyecto</h2>
+      <p class="contact__text">Escríbeme y vemos cómo hacerlo realidad.</p>
 
+      <!-- BOTONES DE CONTACTO
+           Hay dos formas de mostrarlos, y se cambian con UNA sola clase en la línea de abajo:
+             · Con el nombre escrito (WhatsApp, Instagram, Correo) → así está ahora.
+             · Solo con íconos → agrega la clase "contact__buttons--icons", así:
+                 <div class="contact__buttons contact__buttons--icons">
+           Cada botón tiene su ícono y su texto; el CSS decide cuál de los dos se ve.
+           El data-label repite el texto: sirve para que el botón no "salte" de ancho al ponerse en negrita. -->
       <div class="contact__buttons">
         <!-- CAMBIA ESTO: pon tu número (con código de país, sin + ni espacios), tu usuario y tu correo -->
-        <a href="https://wa.me/56987798245" class="btn btn--dark">whatsapp</a>
-        <a href="https://instagram.com/tu_usuario" class="btn btn--line">instagram</a>
-        <a href="mailto:entregasdanipez@gmail.com" class="btn btn--line">correo</a>
+
+        <a href="https://wa.me/56900000000" class="contact__btn" aria-label="WhatsApp">
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span class="btn__label" data-label="WhatsApp">WhatsApp</span>
+        </a>
+
+        <a href="https://instagram.com/tu_usuario" class="contact__btn" aria-label="Instagram">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+          </svg>
+          <span class="btn__label" data-label="Instagram">Instagram</span>
+        </a>
+
+        <a href="mailto:hola@tucorreo.cl" class="contact__btn" aria-label="Correo">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="1"/>
+            <polyline points="3,6 12,13 21,6"/>
+          </svg>
+          <span class="btn__label" data-label="Correo">Correo</span>
+        </a>
       </div>
     </section>
 
@@ -235,7 +265,7 @@
 
   <!-- ================= PIE DE PÁGINA ================= -->
   <footer class="site-footer">
-    <p>© 2026 danipezcl · Hecho a mano</p>
+    <p>© 2026 Danipez · Hecho a mano</p>
   </footer>
 
 </body>
