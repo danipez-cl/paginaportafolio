@@ -210,7 +210,7 @@ html {
 
 .marquee__word {
   display: inline-block;
-  animation-duration: 20s;       /* duración del ciclo completo: súbelo para todo más lento */
+  animation-duration: 10s;       /* duración del ciclo completo: súbelo para todo más lento */
   animation-iteration-count: infinite;
 
   /* Distancias del recorrido (se usan dentro de los @keyframes) */
