@@ -30,9 +30,12 @@
   /* Ancho máximo del contenido */
   --ancho: 1120px;
 
-  /* Margen izquierdo: la línea donde se alinean el logo, las palabras de la portada y el texto.
-     En pantallas anchas coincide con el borde izquierdo del contenido centrado; en celular son 24px. */
-  --margen: max(24px, calc((100vw - var(--ancho)) / 2 + 24px));
+  /* Margen izquierdo: la LÍNEA donde se alinean el logo, las palabras de la portada, la olita,
+     el título ÁREAS y las tarjetas. En pantallas anchas coincide con el borde izquierdo del contenido
+     centrado; en pantallas chicas son 24px.
+     Se calcula con 100% (el ancho real disponible) y NO con 100vw, porque 100vw incluye el ancho de
+     la barra de desplazamiento y dejaba la portada unos píxeles corrida a la derecha. */
+  --margen: max(24px, calc((100% - var(--ancho)) / 2 + 24px));
 }
 
 
@@ -215,6 +218,7 @@ html {
 
 .marquee__word {
   display: inline-block;
+  margin-left: -0.02em;          /* ajuste óptico: las letras grandes tienen un pequeño espacio propio a la izquierda */
   animation-duration: 12.5s;     /* duración del ciclo completo: súbelo para todo más lento, bájalo para más rápido */
   animation-iteration-count: infinite;
 
@@ -288,6 +292,12 @@ html {
   display: block;
   height: 40px;                      /* CAMBIA ESTO: tamaño de la olita. El ancho se ajusta solo. */
   width: auto;
+  /* AJUSTE FINO: si tu archivo olita.png tiene espacio transparente a la izquierda del dibujo,
+     la olita se ve corrida a la derecha. Dos soluciones:
+       (a) recortar la imagen para que el dibujo toque el borde (lo mejor), o
+       (b) restar ese espacio aquí con un número negativo, por ejemplo: margin-left: -14px;
+     Ve probando de a pocos píxeles hasta que quede alineada con las demás cosas. */
+  margin-left: 0;
 }
 
 
@@ -824,13 +834,13 @@ body::before {
   }
 
   .pagina-hero {
-    padding: 40px 20px 28px;
+    padding: 40px 24px 28px;
   }
 
   .galeria-seccion,
   .otras-areas {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .card {
@@ -839,17 +849,18 @@ body::before {
 
   .site-header {
     flex-direction: column;
+    align-items: flex-start;         /* logo y menú pegados a la izquierda, en la misma línea del resto */
     gap: 12px;
   }
 
   .menu {
     gap: 16px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .areas, .featured, .about, .contact {
-    padding: 48px 20px;
+    padding: 48px 24px;              /* 24px, igual que la portada, para que todo quede en la misma línea */
   }
 
   .hero {
