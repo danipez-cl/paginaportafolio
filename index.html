@@ -24,8 +24,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Aquí se conecta el archivo de estilos -->
-  <!-- El "?v=4" obliga al navegador a bajar el CSS nuevo. Si algún día un cambio no se ve, súbele el número. -->
-  <link rel="stylesheet" href="styles.css?v=4">
+  <!-- El "?v=5" obliga al navegador a bajar el CSS nuevo. Si algún día un cambio no se ve, súbele el número. -->
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 
 <body>
@@ -59,7 +59,7 @@
       <!-- LÍNEAS EN MOVIMIENTO
            Son tres líneas (Diseño, Arte, Fotografía). Cada palabra aparece UNA sola vez:
              1. Entra desde el lado derecho de la pantalla.
-             2. Llega al borde izquierdo, hace un pequeño rebote y se detiene.
+             2. Se desliza hasta el borde izquierdo y se detiene (sin rebote).
              3. Cuando las tres ya llegaron, descansan 1,5 segundos juntas.
              4. Calmadamente retoman el movimiento, salen por la izquierda y
                 vuelven a aparecer por la derecha. Y así sin parar.
@@ -81,6 +81,19 @@
         
       </div>
     </section>
+
+
+    <!-- ================= OLITA =================
+         aqui va la olita: es una imagen decorativa que queda bajo las palabras en movimiento.
+         Cómo ponerla:
+           1. Sube tu imagen a la carpeta img/ con el nombre olita.png (todo en minúscula).
+           2. Listo: aparece sola. Mientras el archivo no exista, no se ve nada (no queda ningún hueco roto).
+           3. Para hacerla más grande o más chica, cambia "height" en .olita__img (styles.css).
+           4. Para moverla de lugar, corta y pega este bloque <div class="olita"> donde quieras.
+         El alt="" vacío significa "imagen decorativa": los lectores de pantalla la ignoran. -->
+    <div class="olita">
+      <img src="img/olita.png" alt="" class="olita__img">
+    </div>
 
 
     <!-- ================= LAS 6 ÁREAS ================= -->
